@@ -1,0 +1,1 @@
+{"extends":["html-validate:recommended"],"rules":{"prefer-native-element":"off","no-inline-style":"error","attribute-boolean-style":"off"}}
