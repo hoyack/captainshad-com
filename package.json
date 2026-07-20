@@ -1,0 +1,18 @@
+{
+  "name": "small-crew-runbooks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "python3 -m http.server 4173",
+    "build": "node scripts/build.mjs",
+    "validate": "html-validate index.html 404.html */index.html",
+    "test": "npm run build && npm run test:dist && node tests/site.test.mjs",
+    "test:static": "node tests/static.test.mjs",
+    "test:dist": "node tests/dist.test.mjs",
+    "test:all": "npm run validate && npm run test:static && npm test"
+  },
+  "devDependencies": {
+    "html-validate": "^10.4.0",
+    "playwright": "^1.55.0"
+  }
+}

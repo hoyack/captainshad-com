@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Service Handoff Checklist | Small Crew Runbooks</title>
+  <meta name="description" content="A practical checklist for accepting an inherited app or live service: access, architecture, deploys, restores, monitoring, vendors, and security.">
+  <link rel="canonical" href="https://captainshad.com/service-handoff-checklist/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Service Handoff Checklist — Small Crew Runbooks">
+  <meta property="og:description" content="A practical checklist for accepting an inherited app or live service: access, architecture, deploys, restores, monitoring, vendors, and security.">
+  <meta property="og:url" content="https://captainshad.com/service-handoff-checklist/">
+  <meta property="og:image" content="https://captainshad.com/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Service Handoff Checklist — Small Crew Runbooks">
+  <meta name="twitter:description" content="A practical checklist for accepting an inherited app or live service: access, architecture, deploys, restores, monitoring, vendors, and security.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script src="../scripts/main.js" defer></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary">
+      <a class="brand" href="../" aria-label="Small Crew Runbooks home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Small Crew Runbooks</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>Menu</button>
+      <ul class="nav-links" id="primary-menu" data-nav-menu>
+        <li><a href="../incident-starter-kit/">Incident kit</a></li>
+        <li><a href="../service-handoff-checklist/">Handoffs</a></li>
+        <li><a href="../deployment-checklist/">Deployments</a></li>
+        <li><a href="../monitoring-basics/">Monitoring</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a class="nav-cta" href="../downloads/incident-starter-kit.md" download>Get the kit</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero"><div class="shell page-hero-inner">
+      <p class="eyebrow">Runbook 02 · Service adoption</p>
+      <h1>Hand off the service, not the mystery</h1>
+      <p class="page-lede">A practical acceptance checklist for inherited applications, vendor-run systems, and services that have outlived their original maintainer.</p>
+      <div class="page-meta"><span>RB–02 / v1.0</span><span>Output: Signed handoff packet</span><span>Print-friendly</span></div>
+    </div></section>
+    <section class="section"><div class="shell prose narrow">
+      <p><strong>Done means:</strong> a new operator can deploy, restore, observe, escalate, and pay for the service without depending on the departing maintainer's memory.</p>
+      <h2>1. Ownership and access</h2>
+      <ul class="checklist"><li>Name the business owner, technical owner, incident contact, and budget owner.</li><li>List every production account, organization, tenant, repository, domain registrar, cloud, CI, monitoring, and vendor portal.</li><li>Move shared access into an approved password manager; remove personal accounts and unknown recovery emails.</li><li>Confirm multi-factor authentication, break-glass access, and the process for offboarding.</li></ul>
+      <h2>2. System map</h2>
+      <ul class="checklist"><li>Draw the primary request path from user to response, including DNS, edge, app, data store, queues, and critical vendors.</li><li>Mark trust boundaries, public endpoints, scheduled jobs, and places data is copied.</li><li>Record environments, regions, runtime versions, and end-of-life dependencies.</li><li>Identify the smallest user journey that proves the service is alive.</li></ul>
+      <h2>3. Deploy and rollback</h2>
+      <ul class="checklist"><li>Run the documented build from a clean checkout.</li><li>Deploy a harmless, visible change through the real production path.</li><li>Prove rollback or roll-forward with explicit stop conditions.</li><li>Record migrations, feature flags, secrets, approvals, and who can bypass them.</li></ul>
+      <h2>4. Data, backups, and recovery</h2>
+      <ul class="checklist"><li>Inventory data stores, retention, encryption, residency, and deletion obligations.</li><li>Record backup schedule, retention, location, ownership, and alerting.</li><li>Restore into an isolated environment and verify usable records—not merely a successful backup job.</li><li>Write the recovery point and recovery time the business actually accepts.</li></ul>
+      <h2>5. Monitoring and incident readiness</h2>
+      <ul class="checklist"><li>Test the primary journey from outside the service.</li><li>Route every urgent alert to a named rotation or owner.</li><li>Remove alerts with no action and document silence/escalation rules.</li><li>Run a tabletop failure and confirm the incident log, status channel, and vendor escalation path.</li></ul>
+      <h2>6. Vendor and security due diligence</h2>
+      <ul class="checklist"><li>List contracts, renewal dates, payment methods, usage limits, data-processing terms, and exit/export paths.</li><li>Rotate inherited credentials and review active users, API keys, webhooks, OAuth apps, and certificates.</li><li>Record known vulnerabilities, audit findings, unsupported software, and accepted risks with an owner and review date.</li><li>Verify domain, TLS, email, and code-signing renewals cannot fail silently.</li></ul>
+      <h2>Acceptance record</h2>
+      <pre class="template">Service:
+Business owner:
+Technical owner:
+Handoff date:
+
+[ ] Access transferred and personal accounts removed
+[ ] Clean build completed
+[ ] Production deployment completed
+[ ] Rollback or roll-forward proven
+[ ] Backup restored and checked
+[ ] Primary user journey monitored
+[ ] Vendor/security risks recorded
+
+Open risks | Owner | Due date | Evidence of closure
+-----------|-------|----------|--------------------
+           |       |          |
+
+Accepted by:
+Accepted with exceptions:</pre>
+      <div class="inline-cta"><p><strong>Adopting an orphan application?</strong><br>Hoyack can scope the stabilization and ownership transfer.</p><a class="button button-paper" href="mailto:hello@hoyack.com?subject=Orphan%20app%20adoption%20review">Request a review</a></div>
+    </div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><a class="footer-brand" href="../">Small Crew Runbooks</a><p>No-drama operations guidance for small teams keeping real services alive. A Hoyack field resource.</p></div>
+      <nav aria-label="Policies"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../disclosure/">Disclosure</a><a href="../corrections/">Corrections</a></nav>
+    </div>
+    <div class="shell footer-base"><p>© 2026 Hoyack. All rights reserved.</p><p>Practical starting points, not guaranteed outcomes or a substitute for service-specific review.</p></div>
+  </footer>
+</body>
+</html>
