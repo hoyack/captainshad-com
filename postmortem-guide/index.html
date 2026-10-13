@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Postmortem Guide | Small Crew Runbooks</title>
+  <meta name="description" content="A blameless, evidence-first incident postmortem template with timeline, contributing conditions, and verifiable action items.">
+  <link rel="canonical" href="https://captainshad.com/postmortem-guide/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Postmortem Guide — Small Crew Runbooks">
+  <meta property="og:description" content="A blameless, evidence-first incident postmortem template with timeline, contributing conditions, and verifiable action items.">
+  <meta property="og:url" content="https://captainshad.com/postmortem-guide/">
+  <meta property="og:image" content="https://captainshad.com/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Postmortem Guide — Small Crew Runbooks">
+  <meta name="twitter:description" content="A blameless, evidence-first incident postmortem template with timeline, contributing conditions, and verifiable action items.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script src="../scripts/main.js" defer></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary">
+      <a class="brand" href="../" aria-label="Small Crew Runbooks home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Small Crew Runbooks</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>Menu</button>
+      <ul class="nav-links" id="primary-menu" data-nav-menu>
+        <li><a href="../incident-starter-kit/">Incident kit</a></li>
+        <li><a href="../service-handoff-checklist/">Handoffs</a></li>
+        <li><a href="../deployment-checklist/">Deployments</a></li>
+        <li><a href="../monitoring-basics/">Monitoring</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a class="nav-cta" href="../downloads/incident-starter-kit.md" download>Get the kit</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero"><div class="shell page-hero-inner">
+      <p class="eyebrow">Runbook 04 · Learning</p>
+      <h1>Write the system change, not the courtroom transcript</h1>
+      <p class="page-lede">A factual postmortem structure that preserves impact, decisions, and verifiable follow-up without rewarding blame or theater.</p>
+      <div class="page-meta"><span>RB–04 / v1.0</span><span>Output: Postmortem + action register</span><span>Print-friendly</span></div>
+    </div></section>
+    <section class="section"><div class="shell prose narrow">
+      <p><strong>Use this for:</strong> material incidents, risky near-misses, repeated alerts, and recoveries where the team learned something the operating system should retain.</p>
+      <h2>Ground rules</h2>
+      <ul class="checklist"><li>Describe what happened with evidence available at the time.</li><li>Do not use hindsight as proof that a decision was negligent.</li><li>Treat human action as part of the system: permissions, interfaces, incentives, fatigue, documentation, and staffing all shape it.</li><li>Publish only what is appropriate for the audience; remove secrets and personal or customer data.</li></ul>
+      <h2>The document</h2>
+      <h3>1. Executive summary</h3><p>Two or three sentences: the user impact, duration, service involved, and how normal operation was restored.</p>
+      <h3>2. Impact</h3><p>State affected users, failed journeys, data consequences, contractual or security implications, and the evidence behind estimates. Avoid invented precision.</p>
+      <h3>3. Timeline</h3><p>Use UTC. Include detection, decisions, actions, vendor contact, recovery, and verification. Separate observation from interpretation.</p>
+      <h3>4. Detection and response</h3><p>How did the team learn about the failure? What signal should have fired sooner? Which response steps helped or delayed recovery?</p>
+      <h3>5. Contributing conditions</h3><p>Explain the conditions that made the incident possible or harder to recover: architecture, defaults, ownership, access, capacity, release process, vendor behavior, or missing tests.</p>
+      <h3>6. What changed</h3><p>Record immediate mitigation separately from durable prevention. Not every incident needs a complex rebuild; every action needs an owner, due date, and verification method.</p>
+      <h2>Copy-ready postmortem</h2>
+      <pre class="template">Incident:
+Date / duration (UTC):
+Authors:
+Status: DRAFT / REVIEWED / COMPLETE
+
+SUMMARY
+[User impact, duration, recovery]
+
+IMPACT
+[Scope and evidence]
+
+TIMELINE (UTC)
+TIME | OBSERVATION / DECISION / ACTION | EVIDENCE
+-----|---------------------------------|---------
+     |                                 |
+
+DETECTION AND RESPONSE
+[What signaled; what delayed or helped]
+
+CONTRIBUTING CONDITIONS
+[Technical and organizational conditions]
+
+RECOVERY
+[Why the chosen action worked; how verified]
+
+ACTION | OWNER | DUE | VERIFICATION | STATUS
+-------|-------|-----|--------------|-------
+       |       |     |              |
+
+WHAT WENT WELL
+-
+
+OPEN QUESTIONS
+- </pre>
+      <h2>Action quality test</h2>
+      <ul class="checklist"><li>Names one accountable owner, not “the team.”</li><li>Has a due date tied to risk.</li><li>Changes a system, guardrail, test, interface, or operating rule.</li><li>Defines observable evidence of completion.</li><li>Is closed only after verification, not after a ticket is created.</li></ul>
+      <div class="inline-cta"><p><strong>Same incident, different week?</strong><br>Hoyack can review the service and its operating path.</p><a class="button button-paper" href="mailto:hello@hoyack.com?subject=Recurring%20incident%20review">Request a rescue review</a></div>
+    </div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><a class="footer-brand" href="../">Small Crew Runbooks</a><p>No-drama operations guidance for small teams keeping real services alive. A Hoyack field resource.</p></div>
+      <nav aria-label="Policies"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../disclosure/">Disclosure</a><a href="../corrections/">Corrections</a></nav>
+    </div>
+    <div class="shell footer-base"><p>© 2026 Hoyack. All rights reserved.</p><p>Practical starting points, not guaranteed outcomes or a substitute for service-specific review.</p></div>
+  </footer>
+</body>
+</html>

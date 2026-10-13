@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Small Crew Runbooks | Incident and Operations Checklists</title>
+  <meta name="description" content="No-drama incident runbooks, deployment checklists, service handoffs, postmortems, and monitoring basics for small technical teams.">
+  <link rel="canonical" href="https://captainshad.com/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Small Crew Runbooks — Keep the service alive">
+  <meta property="og:description" content="No-drama incident runbooks, deployment checklists, service handoffs, postmortems, and monitoring basics for small technical teams.">
+  <meta property="og:url" content="https://captainshad.com/">
+  <meta property="og:image" content="https://captainshad.com/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Small Crew Runbooks — Keep the service alive">
+  <meta name="twitter:description" content="No-drama incident runbooks, deployment checklists, service handoffs, postmortems, and monitoring basics for small technical teams.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary">
+      <a class="brand" href="./" aria-label="Small Crew Runbooks home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Small Crew Runbooks</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>Menu</button>
+      <ul class="nav-links" id="primary-menu" data-nav-menu>
+        <li><a href="incident-starter-kit/">Incident kit</a></li>
+        <li><a href="service-handoff-checklist/">Handoffs</a></li>
+        <li><a href="deployment-checklist/">Deployments</a></li>
+        <li><a href="monitoring-basics/">Monitoring</a></li>
+        <li><a href="about/">About</a></li>
+        <li><a class="nav-cta" href="downloads/incident-starter-kit.md" download>Get the kit</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="home-hero"><div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Operations notes for thinly staffed systems</p>
+        <h1>Keep the service alive. Leave the drama out.</h1>
+        <p class="hero-lede">Clear incident runbooks, handoff checklists, and recovery habits for small teams that do not have a full SRE bench waiting offstage.</p>
+        <div class="button-row"><a class="button button-primary" href="downloads/incident-starter-kit.md" download>Get the Incident Starter Kit</a><a class="button button-ghost" href="mailto:hello@hoyack.com?subject=Service%20rescue%20review">Book a service rescue review</a></div>
+        <p class="microcopy">Markdown download. No signup wall. No tracking pixel.</p>
+      </div>
+      <aside class="incident-panel" aria-label="First fifteen minutes incident checklist">
+        <div class="panel-kicker"><span>Incident / first 15 minutes</span><span class="signal-dot" role="img" aria-label="Service status normal"></span></div>
+        <ol class="response-steps">
+          <li><div><strong>Name the lead</strong><span>One incident lead. One shared log.</span></div></li>
+          <li><div><strong>State the impact</strong><span>Describe what users cannot do.</span></div></li>
+          <li><div><strong>Stop the churn</strong><span>Pause unrelated changes and risky deploys.</span></div></li>
+          <li><div><strong>Choose the safest move</strong><span>Rollback, fail over, disable, or observe.</span></div></li>
+          <li><div><strong>Set the next update</strong><span>Communicate a time before you have all answers.</span></div></li>
+        </ol>
+        <p class="panel-foot">The goal is controlled recovery, not a convincing performance of certainty.</p>
+      </aside>
+    </div></section>
+    <section class="signal-strip" aria-label="Service status vocabulary"><div class="shell signal-grid">
+      <p class="signal-normal"><span>Normal</span>Primary user journey works; watch the trend.</p>
+      <p class="signal-degraded"><span>Degraded</span>Users can continue, but risk or delay is rising.</p>
+      <p class="signal-down"><span>Down</span>Critical journey fails; incident lead takes control.</p>
+    </div></section>
+    <section class="section"><div class="shell">
+      <div class="section-head"><div><p class="eyebrow">The runbook shelf</p><h2>Start with the artifact you need next</h2></div><p class="section-intro">Each guide produces something concrete: a log, a handoff packet, a go/no-go record, a postmortem, or an alert policy.</p></div>
+      <div class="runbook-index">
+        <a class="runbook-row" href="incident-starter-kit/"><span class="runbook-code">RB–01</span><h3>Incident Starter Kit</h3><p>Take control of the first 15 minutes and establish a clean recovery gate.</p><span class="row-arrow" aria-hidden="true">→</span></a>
+        <a class="runbook-row" href="service-handoff-checklist/"><span class="runbook-code">RB–02</span><h3>Service Handoff Checklist</h3><p>Transfer a live system without transferring a pile of undocumented risk.</p><span class="row-arrow" aria-hidden="true">→</span></a>
+        <a class="runbook-row" href="deployment-checklist/"><span class="runbook-code">RB–03</span><h3>Deployment Checklist</h3><p>Define the change, verification, stop conditions, and rollback before release.</p><span class="row-arrow" aria-hidden="true">→</span></a>
+        <a class="runbook-row" href="postmortem-guide/"><span class="runbook-code">RB–04</span><h3>Postmortem Guide</h3><p>Turn a service failure into owned, verifiable system changes—not blame.</p><span class="row-arrow" aria-hidden="true">→</span></a>
+        <a class="runbook-row" href="monitoring-basics/"><span class="runbook-code">RB–05</span><h3>Monitoring Basics</h3><p>Cover the user journey first, then alert only when a human can act.</p><span class="row-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div></section>
+    <section class="section section-ink"><div class="shell split">
+      <div><p class="eyebrow">The twenty-minute handoff test</p><h2>Can the next operator find the truth without calling the last one?</h2><p class="section-intro">A service is not handed off until a new operator can answer five questions from written evidence.</p></div>
+      <ol class="rule-list"><li><strong>Owner</strong><span>Who decides, who responds, and who pays the vendor?</span></li><li><strong>Deploy</strong><span>How does a change reach production, and how is it rolled back?</span></li><li><strong>Restore</strong><span>Where are backups, and when was restore last proven?</span></li><li><strong>Signal</strong><span>Which check represents the real user journey?</span></li><li><strong>Supplier</strong><span>Which credentials, renewals, and contracts can stop the service?</span></li></ol>
+    </div></section>
+    <section class="section"><div class="shell split">
+      <div><p class="eyebrow">When the runbook is not enough</p><h2>Inherited app? Unknown deploy? Fragile vendor chain?</h2><p class="section-intro">Hoyack helps small teams stabilize, document, and adopt services that arrived without a safe operating path.</p></div>
+      <div class="callout"><h3>Book a service rescue review</h3><p>Bring the service, the symptoms, and what you know. The first review is for scoping the operating risk and the next useful step—not promising a magic fix.</p><div class="button-row"><a class="button button-primary" href="mailto:hello@hoyack.com?subject=Service%20rescue%20review">Email Hoyack</a><a class="button" href="https://hoyack.com/?utm_source=captainshad.com&amp;utm_medium=referral&amp;utm_campaign=small-crew-runbooks">Visit Hoyack</a></div></div>
+    </div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><a class="footer-brand" href="./">Small Crew Runbooks</a><p>No-drama operations guidance for small teams keeping real services alive. A Hoyack field resource.</p></div>
+      <nav aria-label="Policies"><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="disclosure/">Disclosure</a><a href="corrections/">Corrections</a></nav>
+    </div>
+    <div class="shell footer-base"><p>© 2026 Hoyack. All rights reserved.</p><p>Practical starting points, not guaranteed outcomes or a substitute for service-specific review.</p></div>
+  </footer>
+</body>
+</html>
